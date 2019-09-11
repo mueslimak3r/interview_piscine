@@ -39,14 +39,15 @@ char	pop(struct s_node **list, int offset)
 char	*precious(int *text, int size)
 {
 	struct s_node	*list;
-	char	ret[size + 1];
+	char	*ret;
 
 	list = NULL;
-	if (size == 0 || !text)
+	if (size == 0 || !text || !(ret = malloc(size + 1)))
 		return ("");
+	ret[size] = 0;
 	for (int i = strlen(CS) - 1; i >= 0; i--)
 		push(&list, CS[i]);
 	for (int i = 0; i < size; i++)
 		ret[i] = pop(&list, text[i]);
-	return(strdup(ret));
+	return(ret);
 }
