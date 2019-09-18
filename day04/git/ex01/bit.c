@@ -3,7 +3,7 @@ char    *getAnd(char *a, char *b)
     static char and[5] = { 0 };
     for (int i = 0; i < 4; i++)
     {
-        if (*(a + i) == *(b + i))
+        if (*(a + i) - '0' & *(b + i) - '0')
             and[i] = '1';
         else
             and[i] = '0';
