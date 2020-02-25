@@ -1,4 +1,5 @@
 #include "header.h"
+#include <string.h>
 
 int searchPrice(struct s_art **arts,char *name)
 {

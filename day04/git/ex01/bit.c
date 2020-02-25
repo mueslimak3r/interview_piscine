@@ -31,7 +31,7 @@ int toInt(char *bits)
 
 	for(int i = 3; i >= 0; i--)
 	{
-		if (*(bits + i) - '0' & 0x1)
+		if (*(bits + i) - '0' == '1')
 			ret |= ref;
 		ref <<= 1;
 	}
